@@ -47,6 +47,11 @@
     </ul>
   </div>
 
+  <div class="customjs">
+    <h1>Custom JavaScript</h1>
+    <p id="clickme">Click me!</p>
+  </div>
+
   <div>
     <h1>Get it!</h1>
     <p>
@@ -74,6 +79,18 @@
 <script type="text/javascript" charset="utf-8">
   /* <![CDATA[ */
   var j = new js3();
+
+  js3.transformers.customjs = function (slide) {
+    $('#clickme').click(function () {
+      $(this).animate({
+          fontSize: '200%',
+        }, 500, 'linear', function () {
+          $(this).animate({fontSize: '100%'}, 400);
+        }
+      );
+    });
+  };
+
   j.run();
   /* ]]> */
 </script>

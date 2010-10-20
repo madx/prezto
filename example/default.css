@@ -101,7 +101,7 @@ body > div {
 }
 
 body > div > * {
-  padding-bottom: 0.75em;
+  margin-bottom: 0.75em;
 }
 
 body > div > ul > li {
@@ -126,3 +126,5 @@ h1 sup {
   color: #6c0;
   padding-bottom: 0.5em;
 }
+
+#clickme { cursor: pointer; }
