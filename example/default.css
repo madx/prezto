@@ -110,6 +110,11 @@ body > div > ul > li {
   padding-left: 0.25em;
 }
 
+body > div a:link, body > div a:visited {
+  color: #6c0;
+  text-decoration: underline;
+}
+
 h1 {
   font-weight: bold;
   text-align: center;
