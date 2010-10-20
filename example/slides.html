@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>My slides</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="css_ext/font.css" type="text/css"
+        media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="default.css" type="text/css"
+        media="screen" charset="utf-8" />
+</head>
+
+<body>
+
+  <div class="cover">
+    <h1>js<sup>3</sup></h1>
+    <h2>A simple slideshow system with HTML+CSS+Javascript</h2>
+    <p>Press <kbd>space</kbd> or <kbd>→</kbd></p>
+  </div>
+
+  <div>
+    <h1>Why?</h1>
+    <ul>
+      <li>have less features</li>
+      <li>share easily</li>
+      <li>use a well-known markup language</li>
+      <li>have minimal requirements</li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>Requirements</h1>
+    <ul>
+      <li>a text editor</li>
+      <li>a web server (optional)</li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>Features</h1>
+    <ul>
+      <li>show your slides</li>
+      <li>keyboard navigation</li>
+      <li>a menu to jump to a specific slide</li>
+      <li>custom JavaScript on some slides</li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>Get it!</h1>
+    <p>
+      <a href="http://github.com/madx/js3"
+         title="Get js3">github.com/madx/js3</a>
+    </p>
+  </div>
+
+</body>
+
+<script type="text/javascript" src="../lib/jquery-1.4.3.js"></script>
+<script type="text/javascript" src="../lib/js3.js"></script>
+<script type="text/javascript" charset="utf-8">
+  /* <![CDATA[ */
+  var j = new js3();
+  j.run();
+  /* ]]> */
+</script>
+</html>
