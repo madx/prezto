@@ -21,11 +21,17 @@ experience.
 * Minimal requirements (a text editor is barely the only thing you need)
 * Use well-known and widespread standards
 * Use of custom JS when you need it
-* A help box, just in case ;)
 
 These are the things you won't have with js3 (at least without tweaking):
 
 * Fancy transitions and animations between slides
 * Automatic font scaling
-* Syntax highlighted code (althoug this is easy to add)
+* Syntax highlighted code (although this is easy to add)
 * and certainly many more…
+
+## Controls
+
+* space, right arrow: next slide
+* left arrow: previous slide
+* home: first slide
+* m: toggle menu
