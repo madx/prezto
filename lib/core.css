@@ -66,3 +66,10 @@ body > p#progress {
   width: 100%;
   bottom: 0.5rem;
 }
+
+body > h1#pt-fail {
+  position: absolute;
+  color: #d30;
+  font-size: 3em;
+  font-weight: bold;
+}
