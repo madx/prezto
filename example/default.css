@@ -1,5 +1,5 @@
 /**
- * Default theme for js3
+ * Default theme for prezto
  */
 
 body {
@@ -23,7 +23,7 @@ body > div > ul > li {
 }
 
 body > div a:link, body > div a:visited {
-  color: #6c0;
+  color: #c60;
   text-decoration: underline;
 }
 
@@ -33,9 +33,8 @@ body > div h1 {
   font-size: 150%;
 }
 
-body > div h1 sup {
-  vertical-align: super;
-  color: #6c0;
+body > div.cover h1 span  {
+  color: #c60;
   padding-bottom: 0.5em;
 }
 

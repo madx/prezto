@@ -1,9 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
   <title>My slides</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="application/xhtml+xml;" />
   <link rel="stylesheet" href="../lib/core.css" type="text/css"
         media="screen" charset="utf-8" />
   <link rel="stylesheet" href="default.css" type="text/css"
@@ -13,7 +13,7 @@
 <body>
 
   <div class="cover">
-    <h1>js<sup>3</sup></h1>
+    <h1>prez<span>to</span></h1>
     <h2>A simple slideshow system with HTML+CSS+JavaScript</h2>
     <p>Press <kbd>space</kbd> or <kbd>→</kbd></p>
   </div>
@@ -48,15 +48,14 @@
   </div>
 
   <div class="customjs">
-    <h1>Custom JavaScript</h1>
-    <p id="clickme">Click me!</p>
+    <h1>JavaScript Hooks</h1>
   </div>
 
   <div>
     <h1>Get it!</h1>
     <p>
-      <a href="http://github.com/madx/js3"
-         title="Get js3">github.com/madx/js3</a>
+      <a href="http://github.com/madx/prezto"
+         title="Get prezto">github.com/madx/prezto</a>
     </p>
   </div>
 
@@ -76,23 +75,18 @@
 </body>
 
 <script type="text/javascript" src="../lib/jquery-1.4.3.js"></script>
-<script type="text/javascript" src="../lib/js3.js"></script>
+<script type="text/javascript" src="../lib/prezto.js"></script>
 <script type="text/javascript" charset="utf-8">
   /* <![CDATA[ */
-  var j = new js3();
+  var pt = new prezto();
 
-  js3.transformers.customjs = function (slide) {
-    $('#clickme').click(function () {
-      $(this).animate({
-          fontSize: '200%',
-        }, 500, 'linear', function () {
-          $(this).animate({fontSize: '100%'}, 400);
-        }
-      );
+  pt.hooks.enter['customjs'] = function (slide) {
+    $(slide).find('h1').fadeTo(1000, 0, function () {
+      $(this).delay(200).fadeTo(1000, 1);
     });
-  };
+  }
 
-  j.run();
+  pt.run();
   /* ]]> */
 </script>
 </html>
