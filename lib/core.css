@@ -16,7 +16,6 @@ body > div {
   position: absolute;
   display: none;
   margin: 0 auto;
-  max-width: 72%;
   text-align: center;
 }
 
@@ -54,6 +53,10 @@ body > menu li a.current {
 
 body > menu li a:hover {
   background-color: #444;
+}
+
+body > menu li a.current:hover {
+  color: #ffc;
 }
 
 body > p#progress {
