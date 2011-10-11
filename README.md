@@ -7,7 +7,7 @@ A fast and simple slideshow system with HTML5 + CSS + JavaScript
 
 prezto is a lightweight slideshow system that uses HTML5, CSS and JavaScript. It has
 less features than the majority of web-based slideshow systems (S5, Slidy,
-Slidedown or Showoff for example) and is just &lt;200 lines of JS.
+Slidedown or Showoff for example) and is just ~200 lines of JS.
 
 prezto is meant to be simple to use by everyone. You just need to have some
 basic HTML and CSS knowledge. Advanced users may use custom JS to enhance the
@@ -27,7 +27,7 @@ These are the things you won't have with prezto (at least without tweaking):
 * Fancy transitions and animations between slides
 * Automatic font scaling
 * Syntax highlighted code (although this is easy to add)
-* and certainly many more…
+* and certainly many more …
 
 ## Controls
 
@@ -35,3 +35,5 @@ These are the things you won't have with prezto (at least without tweaking):
 * left arrow: previous slide
 * home: first slide
 * m: toggle menu
+
+## Hooks
