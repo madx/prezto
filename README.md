@@ -37,3 +37,24 @@ These are the things you won't have with prezto (at least without tweaking):
 * m: toggle menu
 
 ## Hooks
+
+Whenever it enters or leaves a slide, prezto runs what I call a hook chain.
+
+Hooks are defined by adding them either to the `hooks.enter` or `hooks.leave`
+objects of your prezto object.
+
+    var pt = new prezto();
+    pt.hooks.enter['.some-class'] = function (slide) {
+      // Do things with slide which wrapped in a jQuery object
+    }
+    pt.run();
+
+You can have hooks for a specific class or a specific ID using `.class` or `#id`
+as a key
+
+If a hook returns `false`, the hook chain will be stopped. ID-hooks are run
+before class-hooks. There's a default hook that is run last and whose job is to
+center the slide.
+
+It may be important to know that al hooks are rerun when the window is
+resized (leave hooks being run before enter hooks).
