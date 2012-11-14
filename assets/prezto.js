@@ -15,15 +15,29 @@ var Prezto = function(window, $) {
   };
 
   SlideShow.prototype.start = function() {
-    this.slides.each(function(i, e) {
-      $(e).hide();
-    });
-
     var self = this;
     $(window).bind('keydown', function (ev) { self.keyDown(ev);          });
     $(window).bind('resize',  function (ev) { self.jumpTo(self.current); });
 
+    this.slides.each(function(i, e) {
+      $(e).hide();
+    });
+
     this.jumpTo(this.current);
+  };
+
+  SlideShow.prototype.fold = function() {
+    this.slides.each(function(i, e) {
+      $(e).hide();
+    });
+
+    this.jumpTo(this.current);
+  };
+
+  SlideShow.prototype.expand = function() {
+    this.slides.each(function(i, e) {
+      $(e).show();
+    });
   };
 
   SlideShow.prototype.jumpTo = function(slideId) {
