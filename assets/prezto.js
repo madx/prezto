@@ -6,7 +6,7 @@
  * Requires Zepto.js (tested with 1.0rc1)
  */
 
-var Prezto = function(window, $, debug) {
+var Prezto = function(window, $) {
 
   var SlideShow = function() {
     this.slides  = $('body > div');
@@ -60,8 +60,7 @@ var Prezto = function(window, $, debug) {
     }
   };
 
-  var slideShow = new SlideShow();
-  if (debug === true) window.slideShow = slideShow;
-  slideShow.start();
+  window.slideShow = new SlideShow();
+  window.slideShow.start();
 };
 
