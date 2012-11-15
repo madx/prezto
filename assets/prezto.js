@@ -65,7 +65,7 @@ var Prezto = function(window, $) {
       32: this.next, // space
       39: this.next, // right
       37: this.prev, // left
-      36: this.home // home
+      36: this.home  // home
     }
 
     if (ev.which in handlers) {
