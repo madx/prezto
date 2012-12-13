@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+  <title>prezto demo</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="application/xhtml+xml;" />
+  <link rel="stylesheet" href="assets/prezto.css" type="text/css"
+        media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="assets/default.theme.css" type="text/css"
+        media="screen" charset="utf-8" />
+</head>
+
+<body>
+
+  <div class="cover">
+    <h1>prez<span>to</span></h1>
+    <h2>A simple slideshow system with HTML+CSS+JS</h2>
+    <p>Press <kbd>space</kbd> or <kbd>→</kbd></p>
+  </div>
+
+  <div>
+    <p>
+      You can go back with <kbd>←</kbd>
+    </p>
+    <p>
+      <kbd>home</kbd> jumps to the first slide
+    </p>
+  </div>
+
+  <div>
+    <h1>Goals</h1>
+    <ul>
+      <li>dead simple</li>
+      <li>no bloat</li>
+      <li>use web standards</li>
+      <li>near-zero requirements</li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>Requirements</h1>
+    <ul>
+      <li>a text editor</li>
+      <li>a web server (optional)</li>
+      <li><a href="http://zeptojs.com/">Zepto.js</a></li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>Features</h1>
+    <ul>
+      <li>split your HTML document in slides</li>
+      <li>navigate with your keyboard</li>
+      <li>extensible through JS</li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>Get it!</h1>
+    <p>
+      <a href="http://github.com/madx/prezto"
+         title="Get prezto">github.com/madx/prezto</a>
+    </p>
+  </div>
+
+  <div>
+    <p>
+      <img src="http://madx.me/media/avatar.png" alt="A picture of me" />
+      <a href="http://twitter.com/madx" title="my Twitter profile">@madx</a>
+    </p>
+  </div>
+
+</body>
+
+<script type="text/javascript" src="assets/zepto.js"></script>
+<script type="text/javascript" src="assets/prezto.js"></script>
+<script type="text/javascript" charset="utf-8">
+  /* <![CDATA[ */
+  Zepto(function($) { Prezto(window, $); });
+  /* ]]> */
+</script>
+</html>
