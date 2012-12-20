@@ -15,6 +15,12 @@ Prezto.SlideShow = function() {
   this.slides  = $('body > div');
   this.current = 0;
   this.last    = this.slides.size() - 1;
+  this.handlers = {
+    32: this.next, // space
+    39: this.next, // right
+    37: this.prev, // left
+    36: this.home  // home
+  }
 };
 
 Prezto.SlideShow.prototype.start = function() {
@@ -63,16 +69,13 @@ Prezto.SlideShow.prototype.home = function () {
   this.jumpTo(0);
 };
 
-Prezto.SlideShow.prototype.keyDown = function (ev) {
-  var handlers = {
-    32: this.next, // space
-    39: this.next, // right
-    37: this.prev, // left
-    36: this.home  // home
-  }
+Prezto.SlideShow.prototype.bind = function(key, handler) {
+  this.handlers[key] = handler;
+}
 
-  if (ev.which in handlers) {
-    handlers[ev.which].call(this);
+Prezto.SlideShow.prototype.keyDown = function (ev) {
+  if (ev.which in this.handlers) {
+    this.handlers[ev.which].call(this);
     ev.preventDefault();
   }
 };
