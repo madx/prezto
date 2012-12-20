@@ -25,8 +25,7 @@ Prezto.SlideShow = function() {
 
 Prezto.SlideShow.prototype.start = function() {
   var self = this;
-  $(window).bind('keydown', function (ev) { self.keyDown(ev);          });
-  $(window).bind('resize',  function (ev) { self.jumpTo(self.current); });
+  $(window).bind('keydown', function (ev) { self.keyDown(ev); });
 
   this.slides.each(function(i, e) {
     $(e).hide();
