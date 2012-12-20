@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+  <title>Rake</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="application/xhtml+xml;" />
+  <link rel="stylesheet" href="assets/prezto.css" type="text/css"
+        media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="assets/rake.theme.css" type="text/css"
+        media="screen" charset="utf-8" />
+</head>
+
+<body>
+
+  <div class="cover">
+    <h1>rake</h1>
+  </div>
+
+  <div>
+    <h1>Installation :</h1>
+    <pre>gem install rake</pre>
+  </div>
+
+  <div class="title">
+    <h1>Les bases</h1>
+  </div>
+
+  <div>
+    <h1>Tâches écrites dans un Rakefile</h1>
+    <h1>Lancées avec <code>rake</code></h1>
+  </div>
+
+  <div>
+    <pre>task :bonjour do&#10;  puts "Bonjour !"&#10;end</pre>
+  </div>
+
+  <div>
+    <pre>$ rake bonjour&#10;Bonjour !</pre>
+  </div>
+
+  <div>
+    <h1>Tâche par défaut : <code>:default</code></h1>
+    <pre>$ rake&#10;rake aborted!&#10;Don't know how to build task 'default'</pre>
+  </div>
+
+  <div>
+    <h1>Dépendances :</h1>
+    <pre>task :default =&gt; :bonjour</pre>
+  </div>
+
+  <div>
+    <pre>$ rake&#10;Bonjour !</pre>
+  </div>
+
+  <div>
+    <pre>task :nom =&gt; [:dep1, :dep2] do |t|&#10;  puts [t.name, t.prerequisites]&#10;end</pre>
+  </div>
+
+  <div>
+    <h1>Descriptions :</h1>
+    <pre>desc "Dit bonjour"&#10;task :bonjour do&#10;  ...</pre>
+  </div>
+
+  <div>
+    <h1>Lister les tâches :</h1>
+    <pre>$ rake -T&#10;rake bonjour  # Dit bonjour</pre>
+  </div>
+
+  <div>
+    <h1>Utilitaires</h1>
+    <ul>
+      <li><code>ruby</code></li>
+      <li><code>sh</code></li>
+      <li><code>FileUtils</code></li>
+    </ul>
+  </div>
+
+  <div>
+    <h1><code>String#pathmap</code></h1>
+    <pre style="font-size: 80%">'a/b/c/d/fichier.txt'.pathmap("%2d")&#10;=&gt; 'a/b'&#10;"/a/b/c/d/fichier.txt".pathmap('%X')&#10;=&gt; "/a/b/c/d/fichier"</pre>
+  </div>
+
+  <div>
+    <h1><code>FileList</code></h1>
+    <pre style="font-size: 80%">&gt;&gt; MKDN = FileList['src/**/*.mkd']&#10;src/articles/git_rebase_autosquash.mkd&#10;src/index.mkd&#10;&#10;&gt;&gt; HTML = MKDN.pathmap('%{^src,build}d/%n.html')&#10;build/articles/git_rebase_autosquash.html&#10;build/index.html</pre>
+  </div>
+
+  <div class="title">
+    <h1>Tâches</h1>
+  </div>
+
+  <div>
+    <pre>file "destination" =&gt; sources</pre>
+  </div>
+
+  <div>
+    <pre>directory "destination"</pre>
+  </div>
+
+  <div>
+    <pre>rule ".html" =&gt; ".mkd"</pre>
+  </div>
+
+  <div>
+    <h1>Alternatives</h1>
+    <ul>
+      <li><a href="https://github.com/wycats/thor/">Thor</a></li>
+      <li><a href="http://www.gnu.org/software/make/">Make</a> 😄</li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>Ressources</h1>
+    <ul>
+      <li><a href="http://rake.rubyforge.org/">rake.rubyforge.org</a></li>
+      <li><a href="http://www.youtube.com/watch?v=KaEqZtulOus">Power Rake par Jim Weirich</a></li>
+    </ul>
+  </div>
+
+</body>
+
+<script type="text/javascript" src="assets/zepto.js"></script>
+<script type="text/javascript" src="assets/prezto.js"></script>
+<script type="text/javascript" charset="utf-8">
+  /* <![CDATA[ */
+  Zepto(function($) { Prezto(window, $); });
+  /* ]]> */
+</script>
+</html>

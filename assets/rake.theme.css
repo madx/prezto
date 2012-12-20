@@ -1,0 +1,80 @@
+body {
+  font-family: "Droid Sans", sans-serif;
+  font-weight: bold;
+  font-size: 4em;
+  background-color: #e3dac1;
+  color: #615d50;
+}
+
+body img {
+  vertical-align: middle;
+}
+
+body > div {
+  line-height: 2;
+  text-align: center;
+}
+
+ul > li {
+  text-align: center;
+}
+
+a:link, a:visited {
+  color: #f66;
+  text-decoration: none;
+  text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.3),
+                1px  1px 0px rgba(255, 255, 255, 0.5);
+}
+
+.cover h1 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 3.2em;
+  color: #f66;
+  line-height: 1;
+  font-variant: small-caps;
+  text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.3),
+                1px  1px 0px rgba(255, 255, 255, 0.5);
+}
+
+.title h1 {
+  font-variant: small-caps;
+  font-size: 3.5em;
+  color: #f66;
+  line-height: 1;
+  text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.3),
+                1px  1px 0px rgba(255, 255, 255, 0.5);
+}
+
+h1 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 150%;
+}
+
+pre, code {
+  background-color: #645d50;
+  color: #e3dac1;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 0 0.25em;
+  font-family: "Droid Sans Mono", monospace;
+}
+
+body > div > pre {
+  padding: 0em 0.5em;
+  margin: 0.5em;
+  text-align: left;
+}
+
+kbd {
+  font-weight: bold;
+  background-color: #eee;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 0.10em 0.25em;
+}
+
