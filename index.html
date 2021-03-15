@@ -3,11 +3,9 @@
 <head>
   <title>prezto demo</title>
   <meta charset="utf-8" />
-  <meta http-equiv="Content-Type" content="application/xhtml+xml;" />
-  <link rel="stylesheet" href="assets/prezto.css" type="text/css"
-        media="screen" charset="utf-8" />
-  <link rel="stylesheet" href="assets/default.theme.css" type="text/css"
-        media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="https://unpkg.com/sanitize.css" />
+  <link rel="stylesheet" href="assets/prezto.css" />
+  <link rel="stylesheet" href="assets/default.theme.css" />
 </head>
 
 <body>
@@ -72,11 +70,9 @@
 
 </body>
 
-<script type="text/javascript" src="assets/zepto.js"></script>
-<script type="text/javascript" src="assets/prezto.js"></script>
-<script type="text/javascript" charset="utf-8">
-  /* <![CDATA[ */
-  Zepto(function($) { Prezto(window, $); });
-  /* ]]> */
+<script type="module">
+  import Prezto from "./assets/prezto.js"
+
+  Prezto()
 </script>
 </html>

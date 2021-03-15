@@ -44,6 +44,12 @@ body > div h1 {
   font-size: 150%;
 }
 
+body > div h2 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 125%;
+}
+
 body > div.cover h1 span  {
   color: #c60;
   padding-bottom: 0.5em;

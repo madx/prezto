@@ -1,81 +1,37 @@
-/**
- * prezto
- * ======
- * A dead simple JavaScript slideshow system using HTML5 + CSS.
- *
- * Requires Zepto.js (tested with 1.0rc1)
- */
+export default function Prezto() {
+  const slides = document.querySelectorAll("body > div")
+  let current = 0
+  const last = slides.length - 1;
 
-var Prezto = function(window, $) {
-  window.slideShow = new Prezto.SlideShow();
-  window.slideShow.start();
-};
-
-Prezto.SlideShow = function() {
-  this.slides  = $('body > div');
-  this.current = 0;
-  this.last    = this.slides.size() - 1;
-  this.handlers = {
-    32: this.next, // space
-    39: this.next, // right
-    37: this.prev, // left
-    36: this.home  // home
+  function jumpTo(slide) {
+    slides[current].classList.add("hidden")
+    current = slide
+    slides[current].classList.remove("hidden")
   }
-};
 
-Prezto.SlideShow.prototype.start = function() {
-  var self = this;
-  $(window).bind('keydown', function (ev) { self.keyDown(ev); });
+  function next() {
+    return jumpTo(Math.min(last, current + 1))
+  }
 
-  this.slides.each(function(i, e) {
-    $(e).hide();
-  });
+  function prev() {
+    return jumpTo(Math.max(0, current - 1))
+  }
 
-  this.jumpTo(this.current);
-};
+  document.body.addEventListener("keydown", ev => {
+    switch (ev.key) {
+      case "ArrowLeft":
+        return prev()
+      case "ArrowRight":
+      case " ":
+        return next()
+      case "Home":
+        return jumpTo(0)
+    }
+  })
 
-Prezto.SlideShow.prototype.fold = function() {
-  this.slides.each(function(i, e) {
-    $(e).hide();
-  });
+  for (const slide of slides) {
+    slide.classList.add("hidden")
+  }
 
-  this.jumpTo(this.current);
-};
-
-Prezto.SlideShow.prototype.expand = function() {
-  this.slides.each(function(i, e) {
-    $(e).show();
-  });
-};
-
-Prezto.SlideShow.prototype.jumpTo = function(slideId) {
-  $(this.slides[this.current]).hide();
-  this.current = slideId;
-  $(this.slides[slideId]).show();
-};
-
-Prezto.SlideShow.prototype.next = function () {
-  if (this.current == this.last) return;
-  this.jumpTo(this.current + 1);
-};
-
-Prezto.SlideShow.prototype.prev = function () {
-  if (this.current == 0) return;
-  this.jumpTo(this.current - 1);
-};
-
-Prezto.SlideShow.prototype.home = function () {
-  this.jumpTo(0);
-};
-
-Prezto.SlideShow.prototype.bind = function(key, handler) {
-  this.handlers[key] = handler;
+  jumpTo(current)
 }
-
-Prezto.SlideShow.prototype.keyDown = function (ev) {
-  if (ev.which in this.handlers) {
-    this.handlers[ev.which].call(this);
-    ev.preventDefault();
-  }
-};
-
